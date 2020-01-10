@@ -23,6 +23,14 @@ contentTypeName = "content/problems"
 
   [params.logo]
     logoText = "cd ~"
+  
+  [[params.social]]
+    name = "email"
+    url = "mailto:puzzathlon@gmail.com"
+
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/Puzzathlon"
 
 [taxonomies]
   tag      = "tags"
