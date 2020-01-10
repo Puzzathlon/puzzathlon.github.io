@@ -3,6 +3,27 @@ languageCode = "en-us"
 theme = "hello-friend"
 
 title = "Puzzathlon"
-homeSubtitle = "In Association with RHUL Computing Society"
 contentTypeName = "content/problems"
 
+[[menu.main]]
+  identifier = "problems"
+  name = "Problems"
+  url = "/problems"
+
+[params]
+  # Date Format
+  dateform = "2 Jan, 2006"
+  dateformShort = "2 Jan"
+  dateformNum = "02/01/2006"
+  
+  # Page Aesthetics
+  homeSubtitle = "In Association with RHUL Computing Society"
+  disableReadOtherPosts = true
+  defaultTheme = "dark"
+
+  [params.logo]
+    logoText = "cd ~"
+
+[taxonomies]
+  tag      = "tags"
+  category = "categories"
