@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content=" Problem statement: Given an arbitrary map consisting of a number of connected regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
-Definitions:  map - region - a continuous set of 2D points fold - a reflection operation that maps all points on one side of a given line to the other side. The operation can be formally described as: &amp;mdash;- overlap - two regions overlap iff  Deadline 13/03/2020 Colloquium 20/03/2020 " />
+<meta name="description" content="Problem statement: Given an arbitrary map consisting of a number of connected regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
+Definitions:  map - a map $M$ is a set of (non-overlapping) regions. region - a region $R$ is a finite continuous set of 2D points. fold - a fold is transformation that maps all points on one side of a given line to the other side, it can be thought of intuitively as a paper fold." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -15,7 +15,7 @@ Definitions:  map - region - a continuous set of 2D points fold - a reflection o
 
     <title>
         
-            Spring 2020 :: Puzzathlon 
+            Spring 2020 ::  
         
     </title>
 
@@ -26,27 +26,27 @@ Definitions:  map - region - a continuous set of 2D points fold - a reflection o
 
 
 
-<link rel="stylesheet" href="/main.min.2f0d18b84270567c723bff340b09ab08db3a7634237cd9667d052eb6b14669b8.css">
+<link rel="stylesheet" href="/main.min.09229a4e80b93d5ff3d7850a7765f7fe2b0720858055bffcaa600a3be750a7d9.css">
 
 
 
 
 <meta itemprop="name" content="Spring 2020">
-<meta itemprop="description" content=" Problem statement: Given an arbitrary map consisting of a number of connected regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
-Definitions:  map - region - a continuous set of 2D points fold - a reflection operation that maps all points on one side of a given line to the other side. The operation can be formally described as: &mdash;- overlap - two regions overlap iff  Deadline 13/03/2020 Colloquium 20/03/2020 ">
+<meta itemprop="description" content="Problem statement: Given an arbitrary map consisting of a number of connected regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
+Definitions:  map - a map $M$ is a set of (non-overlapping) regions. region - a region $R$ is a finite continuous set of 2D points. fold - a fold is transformation that maps all points on one side of a given line to the other side, it can be thought of intuitively as a paper fold.">
 
 
 <meta itemprop="datePublished" content="2020-01-10T10:40:41&#43;00:00" />
 <meta itemprop="dateModified" content="2020-01-10T10:40:41&#43;00:00" />
-<meta itemprop="wordCount" content="77">
+<meta itemprop="wordCount" content="201">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Spring 2020"/>
-<meta name="twitter:description" content=" Problem statement: Given an arbitrary map consisting of a number of connected regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
-Definitions:  map - region - a continuous set of 2D points fold - a reflection operation that maps all points on one side of a given line to the other side. The operation can be formally described as: &mdash;- overlap - two regions overlap iff  Deadline 13/03/2020 Colloquium 20/03/2020 "/>
+<meta name="twitter:description" content="Problem statement: Given an arbitrary map consisting of a number of connected regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
+Definitions:  map - a map $M$ is a set of (non-overlapping) regions. region - a region $R$ is a finite continuous set of 2D points. fold - a fold is transformation that maps all points on one side of a given line to the other side, it can be thought of intuitively as a paper fold."/>
 
 
 
@@ -128,10 +128,29 @@ Definitions:  map - region - a continuous set of 2D points fold - a reflection o
 <h4 id="definitions">Definitions:</h4>
 
 <ul>
-<li><strong>map</strong> -</li>
-<li><strong>region</strong> - a continuous set of 2D points</li>
-<li><strong>fold</strong> - a reflection operation that maps all points on one side of a given line to the other side. The operation can be formally described as: &mdash;-</li>
-<li><strong>overlap</strong> - two regions overlap iff</li>
+<li><strong>map</strong> - a map $M$ is a set of (non-overlapping) regions.</li>
+<li><strong>region</strong> - a region $R$ is a finite continuous set of 2D points.</li>
+<li><strong>fold</strong> - a fold is transformation that maps all points on one side of a given line to the other side, it can be thought of intuitively as a paper fold. The transformation is given more formally below:</li>
+</ul>
+
+<p>Consider a line $L: y = mx + c$ that splits $\mathbb{R}^2$ into two disjoint sets $P$ and $Q$, where $Q$ also contains all points that lie on $L$. A fold $F : P \rightarrow Q$ is given by the affine transformation:</p>
+
+<p>$$v&rsquo; = A v + B$$</p>
+
+<p>for all $v \in P$ where</p>
+
+<p>$$
+A = \frac{1}{1 + m^2} \begin{bmatrix}
+    1 - m^2 &amp; 2m \\ \<br />
+    2m &amp; m^2 - 1
+\end{bmatrix} \\ \\
+B = \frac{1}{1 + m^2}  \begin{bmatrix} -2mc \\ \\ 2c  \end{bmatrix}
+$$</p>
+
+<!-- http://www.sdmath.com/math/geometry/reflection_across_line.html#any). -->
+
+<ul>
+<li><strong>overlap</strong> - two regions $R_i, R_j$ overlap iff they share a point, i.e. $R_i \cap R_j \neq \emptyset$</li>
 </ul>
 
 <h3 id="deadline-13-03-2020">Deadline 13/03/2020</h3>
@@ -155,18 +174,45 @@ Definitions:  map - region - a continuous set of 2D points fold - a reflection o
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2020</span>
+            <span><a href="https://puzzathlon.github.io"></a></span>
             
-            <span></span>
-            <span> <a href="https://puzzathlon.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
         <div class="footer__content">
-            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
-            <span>Made with &#10084; by <a href="https://github.com/rhazdon">rhazdon</a></span>
+            <span> &copy; puzzathlon 2020</span>
+            <span>Powered by <a href="http://gohugo.io">Hugo</a> - Theme by <a href="https://github.com/rhazdon">rhazdon</a></span>
         </div>
     </div>
+
+    <script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script> 
 </footer>
 
             

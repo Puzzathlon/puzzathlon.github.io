@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Problems on Puzzathlon</title>
+    <title>Problems on </title>
     <link>https://puzzathlon.github.io/problems/</link>
-    <description>Recent content in Problems on Puzzathlon</description>
+    <description>Recent content in Problems on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>puzzathlon</copyright>
     <lastBuildDate>Fri, 10 Jan 2020 10:40:41 +0000</lastBuildDate>
     
 	<atom:link href="https://puzzathlon.github.io/problems/index.xml" rel="self" type="application/rss+xml" />
@@ -17,8 +18,8 @@
       <pubDate>Fri, 10 Jan 2020 10:40:41 +0000</pubDate>
       
       <guid>https://puzzathlon.github.io/problems/problem-1/</guid>
-      <description> Problem statement: Given an arbitrary map consisting of a number of connected regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
-Definitions:  map - region - a continuous set of 2D points fold - a reflection operation that maps all points on one side of a given line to the other side. The operation can be formally described as: &amp;mdash;- overlap - two regions overlap iff  Deadline 13/03/2020 Colloquium 20/03/2020 </description>
+      <description>Problem statement: Given an arbitrary map consisting of a number of connected regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
+Definitions:  map - a map $M$ is a set of (non-overlapping) regions. region - a region $R$ is a finite continuous set of 2D points. fold - a fold is transformation that maps all points on one side of a given line to the other side, it can be thought of intuitively as a paper fold.</description>
     </item>
     
   </channel>
