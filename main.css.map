@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/home/joel/Documents/git/puzzathlon-hugo-pages",
+	"sourceRoot": "/home/ben/Documents/repos/puzzathlon/puzzathlon-hugo-pages",
 	"sources": [
 		"themes/hello-friend/assets/scss/main.scss",
 		"themes/hello-friend/assets/scss/_normalize.scss",
