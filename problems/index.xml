@@ -18,7 +18,7 @@
       <pubDate>Fri, 10 Jan 2020 10:40:41 +0000</pubDate>
       
       <guid>https://puzzathlon.github.io/problems/problem-1/</guid>
-      <description>Problem statement: Given an arbitrary map consisting of a number of connected regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
+      <description>Problem statement: Given an arbitrary map consisting of a number of non-overlapping regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
 Definitions:  map - a map $M$ is a set of (non-overlapping) regions. region - a region $R$ is a closed continuous set of 2D points. fold - a fold is transformation that maps all points on one side of a given line to the other side, it can be thought of intuitively as a paper fold.</description>
     </item>
     

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="Problem statement: Given an arbitrary map consisting of a number of connected regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
+<meta name="description" content="Problem statement: Given an arbitrary map consisting of a number of non-overlapping regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
 Definitions:  map - a map $M$ is a set of (non-overlapping) regions. region - a region $R$ is a closed continuous set of 2D points. fold - a fold is transformation that maps all points on one side of a given line to the other side, it can be thought of intuitively as a paper fold." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
@@ -32,20 +32,20 @@ Definitions:  map - a map $M$ is a set of (non-overlapping) regions. region - a 
 
 
 <meta itemprop="name" content="Spring 2020">
-<meta itemprop="description" content="Problem statement: Given an arbitrary map consisting of a number of connected regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
+<meta itemprop="description" content="Problem statement: Given an arbitrary map consisting of a number of non-overlapping regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
 Definitions:  map - a map $M$ is a set of (non-overlapping) regions. region - a region $R$ is a closed continuous set of 2D points. fold - a fold is transformation that maps all points on one side of a given line to the other side, it can be thought of intuitively as a paper fold.">
 
 
 <meta itemprop="datePublished" content="2020-01-10T10:40:41&#43;00:00" />
 <meta itemprop="dateModified" content="2020-01-10T10:40:41&#43;00:00" />
-<meta itemprop="wordCount" content="232">
+<meta itemprop="wordCount" content="244">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Spring 2020"/>
-<meta name="twitter:description" content="Problem statement: Given an arbitrary map consisting of a number of connected regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
+<meta name="twitter:description" content="Problem statement: Given an arbitrary map consisting of a number of non-overlapping regions, find the shortest sequence of folds which ensures that every region overlaps every other region.
 Definitions:  map - a map $M$ is a set of (non-overlapping) regions. region - a region $R$ is a closed continuous set of 2D points. fold - a fold is transformation that maps all points on one side of a given line to the other side, it can be thought of intuitively as a paper fold."/>
 
 
@@ -123,7 +123,7 @@ Definitions:  map - a map $M$ is a set of (non-overlapping) regions. region - a 
 
 <h2 id="problem-statement">Problem statement:</h2>
 
-<p>Given an arbitrary map consisting of a number of connected regions, find the shortest sequence of folds which ensures that every region overlaps every other region.</p>
+<p>Given an arbitrary map consisting of a number of non-overlapping regions, find the shortest sequence of folds which ensures that every region overlaps every other region.</p>
 
 <h4 id="definitions">Definitions:</h4>
 
@@ -133,9 +133,13 @@ Definitions:  map - a map $M$ is a set of (non-overlapping) regions. region - a 
 <li><strong>fold</strong> - a fold is transformation that maps all points on one side of a given line to the other side, it can be thought of intuitively as a paper fold. The transformation is given more formally below:</li>
 </ul>
 
-<p>Consider a line $L: y = mx + c$ that splits $\mathbb{R}^2$ into two disjoint sets $P$ and $Q$, where $Q$ also contains all points that lie on $L$. A fold $F : P \rightarrow Q$ is given by the affine transformation:</p>
+<p>Consider a line $L: y = mx + c$ that splits $\mathbb{R}^2$ into two disjoint sets $P$ and $Q$, where $Q$ also contains all points that lie on $L$. A fold $F : \mathbb{R}^2 \rightarrow Q$ is given by:</p>
 
-<p>$$v&rsquo; = A v + B$$</p>
+<p>$$F(v) = v$$</p>
+
+<p>for all $v \in Q$ and the affine transformation:</p>
+
+<p>$$F(v) = A v + B$$</p>
 
 <p>for all $v \in P$ where</p>
 
@@ -145,21 +149,30 @@ A = \frac{1}{1 + m^2} \begin{bmatrix}
     2m &amp; m^2 - 1
 \end{bmatrix} \\ \\
 B = \frac{1}{1 + m^2}  \begin{bmatrix} -2mc \\ \\ 2c  \end{bmatrix}
-$$</p>
+$$
+and</p>
 
 <!-- http://www.sdmath.com/math/geometry/reflection_across_line.html#any). -->
 
 <ul>
-<li><strong>overlap</strong> - two regions $R_i, R_j$ overlap iff they share a point, i.e. $R_i \cap R_j \neq \emptyset$</li>
+<li><strong>overlap</strong> - two regions $R_i, R_j$ overlap iff they share at least one point, i.e. $R_i \cap R_j \neq \emptyset$</li>
 </ul>
+
+<!-- 
+The problem can be more formally described as:
+
+Find a composition of folds $F(x) = (F_1 \circ F_2 \circ \cdots \circ F_n)(x)$ s.t. $F(x_i) = F(x_j)$    $x_i \in R_i, x_j \in R_j$     $\forall i,j$ 
+ 
+I dont think this will help things...
+ -->
 
 <h2 id="more-information">More Information</h2>
 
 <p>Some (possibly) simpler variants of the problem to consider:</p>
 
 <ul>
+<li><strong>1-D space</strong></li>
 <li><strong>Single point regions</strong></li>
-<li><strong>Convex regions</strong></li>
 <li><strong>Simpler folds</strong> $L : y = mx$ results in $v&rsquo; = Av$, a linear transformation.</li>
 </ul>
 
